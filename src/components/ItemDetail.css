@@ -1,0 +1,26 @@
+.item-detail {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.item-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.add-cart {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #00e5ff;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
