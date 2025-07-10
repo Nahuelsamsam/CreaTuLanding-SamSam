@@ -1,0 +1,100 @@
+.item-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* Espacio entre imagen y texto */
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #977b57;
+  border-radius: 10px;
+  color: white;
+  text-align: left; /* para alinear el texto a la izquierda */
+}
+
+.item-img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  cursor: default !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+.item-info {
+  flex: 1; /* El texto ocupará el resto del espacio */
+}
+
+.add-cart {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #664b35;
+  border: none;
+  color: rgb(201, 194, 194);
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.item-detail h2,
+.item-detail p {
+  cursor: default !important;
+  user-select: none !important;
+  caret-color: transparent !important;
+}
+
+img {
+  caret-color: transparent;
+  user-select: none;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.contador-carrito {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #aa9e90;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+}
+
+.contador button {
+  background-color: #000000;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.contador span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.item-detail button {
+  background-color: #977b57;
+  border: 2px solid #d8c9c9;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}

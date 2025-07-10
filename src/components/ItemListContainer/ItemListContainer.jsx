@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Item from './Item';
-import productos from '../data/productos';
+import Item from '../Item/Item';
+import productos from '/Users/samsa/proyecto-react/src/data/productos';
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {

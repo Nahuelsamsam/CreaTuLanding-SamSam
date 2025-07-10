@@ -1,35 +1,35 @@
 const productos = [
   {
     id: 1,
-    nombre: 'iPhone 13',
-    categoria: 'smartphones',
-    precio: 999,
-    imagen: 'https://ipoint.com.ar/22431-thickbox_default/iphone-13-256gb-pink.jpg',
-    descripcion: 'El nuevo iPhone 13 con cámara avanzada y chip A15 Bionic.'
+    nombre: 'Mate Torpedo Premium',
+    categoria: 'Mates',
+    precio: 120,
+    imagen: 'https://acdn-us.mitiendanube.com/stores/003/349/408/products/captura-de-pantalla-2025-01-22-a-las-12-10-59p-m-c974c4a494e86a548017375589123183-640-0.webp',
+    descripcion: 'Mate torpedo premium, base de cuero crudo con virola de alpaca.'
   },
   {
     id: 2,
-    nombre: 'Perfume Dior',
-    categoria: 'perfumes',
-    precio: 120,
-    imagen: 'https://farma365.com.ar/wp-content/uploads/2024/04/3348901486392-3.webp',
-    descripcion: 'Fragancia intensa y elegante de Dior.'
+    nombre: 'Termo Stanley',
+    categoria: 'Termos',
+    precio: 100,
+    imagen: 'https://acdn-us.mitiendanube.com/stores/003/349/408/products/img_9599-61470ac889b555028d17232158375305-640-0.jpg',
+    descripcion: 'Termo stanley de 1.2 lts, con duracion de 24 horas.'
   },
   {
     id: 3,
-    nombre: 'Paleta de sombras',
-    categoria: 'maquillaje',
-    precio: 30,
-    imagen: 'https://xulu.com.ar/upload/Z00484_1_Foto_01.jpg',
-    descripcion: 'Colores vibrantes y duraderos para tus ojos.'
+    nombre: 'Yerba Cosmico',
+    categoria: 'Yerbas',
+    precio: 40,
+    imagen: 'https://acdn-us.mitiendanube.com/stores/003/349/408/products/captura-de-pantalla-2024-07-08-a-las-16-58-16-6fd19f6ca8c81d1ca717204687272531-640-0.png',
+    descripcion: 'Yerba con palo de 1KG, ideal para esas tardes de invierno.'
   },
   {
     id: 4,
-    nombre: 'Collar elegante',
-    categoria: 'accesorios',
+    nombre: 'Bombillon Premium',
+    categoria: 'Bombillas',
     precio: 15,
-    imagen: 'https://www.joyaspangea.com/cdn/shop/files/169434SM.png?v=1736778697&width=1080',
-    descripcion: 'Collar con diseño minimalista y acabado brillante.'
+    imagen: 'https://acdn-us.mitiendanube.com/stores/003/349/408/products/bombillon-copa-del-mundo1-c3b1a54a46aecc719a16928873331516-1024-1024.jpg',
+    descripcion: 'Bombillon recto, material de alpaca.'
   }
 ];
 

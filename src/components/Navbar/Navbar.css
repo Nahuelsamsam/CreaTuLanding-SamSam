@@ -1,0 +1,133 @@
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6b4f3b;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffcc99;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO */
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* CART ICON */
+.cart-icon-container {
+  margin-left: 1.5rem;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.cart-icon-container i {
+  color: white;
+  font-size: 24px;
+}
+
+.cart-icon-container span {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #ff6600;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* PRODUCT LIST */
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* PRODUCT CARD */
+.item {
+  background: linear-gradient(145deg, #8a6f54, #6f543d);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 240px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.item h3 {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.item p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+
+/* BUTTON */
+.ver-detalle-btn {
+  margin-top: 0.6rem;
+  background-color: #ffcc99;
+  color: #333;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.ver-detalle-btn:hover {
+  background-color: #ffc07a;
+}
+
+/* GENERAL */
+a {
+  cursor: pointer;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f1ed;
+}
