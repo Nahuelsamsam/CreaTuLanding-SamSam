@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Checkout.css";
 import { useCart } from "../../context/CartContext";
 
 const Checkout = () => {
   const { cartItems, total, clearCart } = useCart();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    nombre: "",
+    telefono: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,9 +29,37 @@ const Checkout = () => {
       <div className="checkout-form">
         <h2>Datos de contacto</h2>
         <form onSubmit={handleSubmit}>
-          <input type="email" placeholder="E-mail" required />
-          <input type="text" placeholder="Nombre" required />
-          <input type="tel" placeholder="Teléfono" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            pattern=".*@.*"
+            title="El correo debe contener un '@' válido"
+          />
+
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="tel"
+            name="telefono"
+            placeholder="Teléfono"
+            value={formData.telefono}
+            onChange={handleChange}
+            required
+            pattern="[0-9]+"
+            title="El teléfono debe contener solo números"
+          />
+
           <button type="submit">Finalizar compra</button>
         </form>
       </div>
