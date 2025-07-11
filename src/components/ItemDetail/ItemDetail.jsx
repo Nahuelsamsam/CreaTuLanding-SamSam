@@ -1,6 +1,6 @@
 import './ItemDetail.css';
 import { useState } from 'react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../../context/CartContext';
 
 function ItemDetail({ product }) {
   const [cantidad, setCantidad] = useState(1);

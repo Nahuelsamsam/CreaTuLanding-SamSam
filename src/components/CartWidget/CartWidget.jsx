@@ -1,4 +1,4 @@
-import { useCart } from "../context/CartContext";
+import { useCart } from "../../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import "./CartWidget.css";
 
