@@ -1,6 +1,6 @@
 import './ItemDetail.css';
 import { useState } from 'react';
-import { useCart } from '../../context/CartContext';
+import useCart from "../../context/UseCart";
 import { toast } from 'react-toastify';
 
 function ItemDetail({ product }) {

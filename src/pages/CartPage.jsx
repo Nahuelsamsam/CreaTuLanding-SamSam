@@ -1,5 +1,4 @@
-import { useCart } from "../context/CartContext";
-
+import useCart from "../../src/context/UseCart";
 import './CartPage.css';
 
 

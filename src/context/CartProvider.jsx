@@ -1,8 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { useState } from "react";
+import CartContext from "./CartContext";
 
-const CartContext = createContext();
-
-export const CartProvider = ({ children }) => {
+const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product, quantity = 1) => {
@@ -25,7 +24,6 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
   };
 
-  // ✅ Nueva función para aumentar cantidad
   const increaseQuantity = (id) => {
     setCartItems(prev =>
       prev.map(item =>
@@ -34,7 +32,6 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // ✅ Nueva función para disminuir cantidad
   const decreaseQuantity = (id) => {
     setCartItems(prev =>
       prev.map(item =>
@@ -58,7 +55,7 @@ export const CartProvider = ({ children }) => {
         totalQuantity,
         total,
         increaseQuantity,
-        decreaseQuantity, // 👈 Añadidas al contexto
+        decreaseQuantity,
       }}
     >
       {children}
@@ -66,4 +63,4 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-export const useCart = () => useContext(CartContext);
+export default CartProvider;
