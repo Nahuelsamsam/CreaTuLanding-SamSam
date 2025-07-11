@@ -1,12 +1,66 @@
-# React + Vite
+# KyvyMates 🧉
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Autor:** Nahuel Sam Sam  
+**Comisión:** 73710  
+**Proyecto final – Curso React JS (Coderhouse)**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛒 Descripción
 
-## Expanding the ESLint configuration
+**KyvyMates** es una tienda online de productos relacionados con la cultura del mate: mates, bombillas, termos y yerbas.  
+El proyecto fue desarrollado con **React JS** y cumple con todos los requisitos del curso de Coderhouse.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Cuenta con funcionalidades como:
+
+- Vista de productos por categoría
+- Detalle individual de cada producto
+- Carrito de compras con sidebar animado
+- Control de stock y cantidades
+- Checkout con formulario de contacto
+- Estilo visual moderno y responsive
+
+---
+
+## 🧱 Tecnologías utilizadas
+
+- React JS
+- React Router DOM
+- Context API
+- Tailwind CSS (o estilos propios modernos)
+- Firebase (si se utilizó para checkout / base de datos)
+
+---
+
+## 📸 Capturas del sitio
+
+### 🏬 Home
+![Home](/src/assets/home.png)
+
+### 🛒 Sidebar del carrito
+![Carrito](./assets/cart-sidebar.png)
+
+### ✅ Checkout
+![Checkout](./assets/checkout.png)
+
+---
+
+## 🧠 Estructura del proyecto
+
+```bash
+src/
+├── components/
+│   ├── Item.jsx
+│   ├── ItemDetail.jsx
+│   ├── ItemList.jsx
+│   ├── CartSidebar.jsx
+│   └── ...
+├── context/
+│   └── CartContext.jsx
+├── data/
+│   └── productos.js
+├── pages/
+│   ├── Home.jsx
+│   ├── Cart.jsx
+│   └── Checkout.jsx
+└── App.jsx

@@ -1,13 +1,29 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Item from '../Item/Item';
-import productos from '/Users/samsa/proyecto-react/src/data/productos';
+import { getProducts } from '../../firebase/db';
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
   const { categoryId } = useParams();
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const productosFirebase = await getProducts();
+        console.log("Productos desde Firebase:", productosFirebase);
+        setProductos(productosFirebase);
+      } catch (error) {
+        console.error("Error al obtener productos:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const productosFiltrados = categoryId
-    ? productos.filter(prod => prod.categoria === categoryId)
+    ? productos.filter((prod) => prod.categoria === categoryId)
     : productos;
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Checkout.css";
 import useCart from "../../context/UseCart";
+import { saveOrder } from "../../firebase/db"; // 👈 Importamos la función para guardar la orden
 
 const Checkout = () => {
   const { cartItems, total, clearCart } = useCart();
@@ -11,6 +12,8 @@ const Checkout = () => {
     telefono: "",
   });
 
+  const [orderId, setOrderId] = useState(null);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -18,10 +21,38 @@ const Checkout = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("¡Compra finalizada con éxito!");
-    clearCart();
+
+    const order = {
+      comprador: formData,
+      items: cartItems.map((item) => ({
+        id: item.id,
+        nombre: item.nombre,
+        cantidad: item.quantity,
+        precio: item.precio,
+      })),
+      total: total,
+      fecha: new Date().toISOString(),
+    };
+
+    // Mostrar la orden en la consola
+    console.group("%c🧾 Orden de compra generada", "color: green; font-weight: bold;");
+    console.log(order);
+    console.groupEnd();
+
+    try {
+      const id = await saveOrder(order);
+      setOrderId(id);
+
+      console.log("%c✅ ID de la orden:", "color: blue; font-weight: bold;", id);
+
+      clearCart();
+      alert(`¡Compra finalizada con éxito! ID de orden: ${id}`);
+    } catch (error) {
+      console.error("❌ Error al guardar la orden:", error);
+      alert("Ocurrió un error al guardar la orden.");
+    }
   };
 
   return (
@@ -62,6 +93,13 @@ const Checkout = () => {
 
           <button type="submit">Finalizar compra</button>
         </form>
+
+        {orderId && (
+          <div className="order-confirmation">
+            <p>Tu orden fue registrada con el ID:</p>
+            <strong>{orderId}</strong>
+          </div>
+        )}
       </div>
 
       <div className="checkout-summary">
@@ -70,7 +108,9 @@ const Checkout = () => {
           <div key={item.id} className="checkout-item">
             <img src={item.imagen} alt={item.nombre} />
             <div>
-              <p>{item.nombre} x{item.quantity}</p>
+              <p>
+                {item.nombre} x{item.quantity}
+              </p>
               <p>${item.precio * item.quantity}</p>
             </div>
           </div>
