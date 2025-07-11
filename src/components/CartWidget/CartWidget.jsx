@@ -1,18 +1,16 @@
-import { useCart } from "../../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import "./CartWidget.css";
+import { useCart } from "../../context/CartContext";
 
-function CartWidget() {
-  const { cartItems } = useCart();
-
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+const CartWidget = ({ onClick }) => {
+  const { totalQuantity } = useCart();
 
   return (
-    <div className="cart-widget">
+    <div className="cart-widget" onClick={onClick}>
       <FaShoppingCart size={24} />
-      {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+      <span>{totalQuantity}</span>
     </div>
   );
-}
+};
 
 export default CartWidget;

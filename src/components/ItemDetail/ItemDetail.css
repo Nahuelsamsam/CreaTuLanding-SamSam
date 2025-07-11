@@ -78,7 +78,7 @@ img {
 }
 
 .contador button {
-  background-color: #000000;
+  background-color: #ffffff;
   border: none;
   padding: 0.3rem 0.6rem;
   cursor: pointer;
@@ -97,4 +97,12 @@ img {
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.item-detail button:hover {
+  background-color: #7b5f40;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }

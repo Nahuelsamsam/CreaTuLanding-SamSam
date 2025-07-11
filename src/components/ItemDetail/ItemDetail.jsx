@@ -1,6 +1,7 @@
 import './ItemDetail.css';
 import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
+import { toast } from 'react-toastify';
 
 function ItemDetail({ product }) {
   const [cantidad, setCantidad] = useState(1);
@@ -8,6 +9,11 @@ function ItemDetail({ product }) {
 
   const incrementar = () => setCantidad(prev => prev + 1);
   const decrementar = () => setCantidad(prev => (prev > 1 ? prev - 1 : 1));
+
+  const handleAdd = () => {
+    addToCart(product, cantidad);
+    toast.success('Producto agregado al carrito 🎉');
+  };
 
   return (
     <div className="item-detail">
@@ -22,7 +28,7 @@ function ItemDetail({ product }) {
           <span>{cantidad}</span>
           <button onClick={incrementar}>+</button>
         </div>
-        <button onClick={() => addToCart(product, cantidad)}>
+        <button onClick={handleAdd}>
           Agregar al carrito
         </button>
       </div>
