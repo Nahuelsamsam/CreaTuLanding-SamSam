@@ -3,12 +3,13 @@ import "./CartWidget.css";
 import { useCart } from "../../context/CartContext";
 
 const CartWidget = ({ onClick }) => {
-  const { totalQuantity } = useCart();
+  const { cartItems } = useCart();
+  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <div className="cart-widget" onClick={onClick}>
       <FaShoppingCart size={24} />
-      <span>{totalQuantity}</span>
+      {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
     </div>
   );
 };

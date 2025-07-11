@@ -5,6 +5,7 @@ import CartSidebar from "./components/CartSidebar/CartSidebar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import CartPage from "./pages/CartPage";
+import Checkout from "./components/Checkout/Checkout"; 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
         <Route path="/item/:itemId" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<Checkout />} /> {/* ✅ Ruta añadida */}
       </Routes>
 
       <ToastContainer position="top-right" autoClose={2000} />
