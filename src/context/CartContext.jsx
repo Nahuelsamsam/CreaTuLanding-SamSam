@@ -25,12 +25,28 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
   };
 
-  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  // ✅ Nueva función para aumentar cantidad
+  const increaseQuantity = (id) => {
+    setCartItems(prev =>
+      prev.map(item =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
 
-  const total = cartItems.reduce(
-    (acc, item) => acc + item.precio * item.quantity,
-    0
-  );
+  // ✅ Nueva función para disminuir cantidad
+  const decreaseQuantity = (id) => {
+    setCartItems(prev =>
+      prev.map(item =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
+  const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const total = cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
   return (
     <CartContext.Provider
@@ -41,6 +57,8 @@ export const CartProvider = ({ children }) => {
         clearCart,
         totalQuantity,
         total,
+        increaseQuantity,
+        decreaseQuantity, // 👈 Añadidas al contexto
       }}
     >
       {children}

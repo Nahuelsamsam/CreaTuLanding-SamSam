@@ -4,18 +4,16 @@ import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const CartSidebar = ({ isOpen, onClose }) => {
-  const { cartItems, removeFromCart, clearCart } = useCart();
+  const {
+    cartItems,
+    removeFromCart,
+    clearCart,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useCart();
+
   const navigate = useNavigate();
-
-  const total = cartItems.reduce(
-    (acc, item) => acc + item.precio * item.quantity,
-    0
-  );
-
-  const handleGoToProducts = () => {
-    onClose();
-    navigate("/");
-  };
+  const total = cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
   const handleGoToCheckout = () => {
     onClose();
@@ -31,10 +29,16 @@ const CartSidebar = ({ isOpen, onClose }) => {
 
       <div className="cart-sidebar-body">
         {cartItems.length === 0 ? (
-          <div>
+          <div className="empty-cart">
             <p>El carrito está vacío</p>
-            <button className="see-products-btn" onClick={handleGoToProducts}>
-              Ver productos
+            <button
+              className="see-products-btn"
+              onClick={() => {
+                onClose();
+                navigate("/");
+              }}
+            >
+              Ver más productos
             </button>
           </div>
         ) : (
@@ -44,23 +48,24 @@ const CartSidebar = ({ isOpen, onClose }) => {
                 <img src={item.imagen} alt={item.nombre} />
                 <div className="cart-item-info">
                   <h4>{item.nombre}</h4>
-                  <p>Cantidad: {item.quantity}</p>
-                  <p>Subtotal: ${item.precio * item.quantity}</p>
+                  <div className="quantity-controls">
+                    <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => increaseQuantity(item.id)}>+</button>
+                  </div>
+                  <p className="item-subtotal">Subtotal: ${item.precio * item.quantity}</p>
                 </div>
-                <button onClick={() => removeFromCart(item.id)}>Borrar</button>
+                <button className="remove-btn" onClick={() => removeFromCart(item.id)}>Borrar</button>
               </div>
             ))}
 
             <div className="cart-sidebar-footer">
-              <p>
+              <hr />
+              <p className="total-label">
                 <strong>Total: ${total}</strong>
               </p>
-              <button className="clear-cart-btn" onClick={clearCart}>
-                Vaciar carrito
-              </button>
-              <button className="checkout-btn" onClick={handleGoToCheckout}>
-                Ir al checkout
-              </button>
+              <button className="clear-cart-btn" onClick={clearCart}>Vaciar carrito</button>
+              <button className="checkout-btn" onClick={handleGoToCheckout}>Ir al checkout</button>
             </div>
           </>
         )}

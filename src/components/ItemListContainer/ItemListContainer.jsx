@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import Item from '../Item/Item';
 import productos from '/Users/samsa/proyecto-react/src/data/productos';

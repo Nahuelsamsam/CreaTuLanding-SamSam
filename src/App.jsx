@@ -3,7 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import CartSidebar from "./components/CartSidebar/CartSidebar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import CartPage from "./pages/CartPage";
 import Checkout from "./components/Checkout/Checkout"; 
 import { ToastContainer } from "react-toastify";
